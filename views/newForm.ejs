@@ -1,0 +1,19 @@
+<table border="1px">
+        <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+    </tr>
+    
+    
+            <% for(var i = 0 ; i < data.length ; i++){ %>
+    <tr>
+            <td><%= data[i].name %> </td><td> <%= data[i].email  %> </td><td><%= data[i].phone %></td>
+    </tr>  
+                
+            <% } %>        
+    
+</table>
+<!-- <% for(var i = 0 ; i < data.length ; i++){ %>
+    <td></td>  <%= data[i].name %> email:<%= data[i].email  %> phone:<%= data[i].phone %></li>
+<% } %> -->

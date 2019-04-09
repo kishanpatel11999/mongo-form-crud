@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <script src="/stuff/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./stuff/style.css">
+</head>
+<body>
+
+
+    <% include partial/nav.ejs %>
+   
+    <div class="form">
+        <form action="/form" method="POST" id="formid" >
+            <input type="text"  name="name" id="name" onkeyup="Lonly(this)" placeholder="Enter name" autocomplete="off">
+            <span id="namecheck"></span>
+            <input type="email" name="email" id="email"  placeholder="Enter email" autocomplete="off">
+            <span id="emailcheck"></span>
+            
+            <input type="text" maxlength="10" onkeyup="Nonly(this)"  onkeypress="return event.charCode >=48 && event.charCode <= 57" name="phone" id="phone" placeholder="Enter phone" autocomplete="off">
+            <span id="phonecheck"></span>
+
+            <button id="validate" > <i class="fas fa-plus-circle"></i> </button>
+        </form>
+
+        <script>
+             function Lonly(ip)
+
+                    {
+                        reg=/[^a-z_" "]+[^a-z]/gi;
+                        ip.value=ip.value.replace(reg,"");
+                    }
+
+
+
+            function Nonly(ip)
+
+                    {
+                        reg=/[^0-9]/gi;
+                        ip.value=ip.value.replace(reg,"");
+                    }
+        </script>
+
+
+        <br>
+        <br>
+
+
+        <form action="/form/find" method="GET">
+           <label for="search"> <input type="text" name="search" id="search" placeholder="Search via name" autocomplete="off">
+            <button type="submit" id="find"><i class="fas fa-search"></i></button></label>
+        </form>
+    </div>
+
+
+
+    <br>
+    <br>
+
+    <!-- show dbs -->
+<center>
+    <table border="1px" id="showdb">
+            <tr>
+            <td class="headstyle">Name</td>
+            <td class="headstyle">Email</td>
+            <td class="headstyle">Phone</td>
+        </tr>
+                <% for(var i = 0 ; i < data.length ; i++){ %>
+        <tr>
+                <td class="padd"><%= data[i].name %> </td>
+                <td class="padd"> <%= data[i].email  %> </td>
+                <td class="padd"><%= data[i].phone %></td>
+                <td id="trashbtntd">
+                    <form action="/delete/<%= data[i]._id %>" method="GET">
+                   <button ><i class="fas fa-trash"></i></button></td>
+                </form>
+        </tr>  
+                    
+                <% } %>        
+        
+    </table>
+</center>
+
+
+  
+<script>
+    $(document).ready(()=>{
+        
+        
+    })
+    
+
+</script>
+
+
+</body>
+</html>

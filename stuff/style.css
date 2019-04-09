@@ -1,0 +1,153 @@
+body{
+    /* font-family: 'Times New Roman', Times, serif; */
+    text-align: center;
+    background: #222930;
+    margin: 0% 10%;
+    color: aliceblue;
+    margin-bottom: 5%;
+    
+}
+
+
+nav{
+    font-size: 2em;
+    color: white;
+    padding-bottom:20px;
+    border-bottom: 5px solid skyblue; 
+}
+.li{
+    list-style: none;
+    float: left;
+    padding: 0 20px 5px 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+#home{
+    letter-spacing: 0.4em;
+    line-height: 2em;
+    font-size: 1.5em;
+
+}
+
+.main{
+    /* font-size: 15px;
+    word-spacing: 5px; */
+    letter-spacing: 1em;
+    line-height: 7em;
+    font-size: 1em;
+}
+.titlediv{
+    font-size:2em; 
+    letter-spacing: 5px;
+}
+
+
+
+#h2about{
+    font-size: 2em;
+}
+
+.aboutli{
+    float: left;
+    font-size: 1.5em;
+}
+
+.form{
+    margin-top: 3%;
+}
+
+input{
+    width: 20%;
+    padding: 10px;
+    margin-right: 8px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+button{
+    padding: 10px;
+    background: #222930;
+    border: none;
+}
+
+.fa-plus-circle{
+    background: #222930;
+    color: skyblue;
+    /* padding: 10px; */
+    border-radius: 5%;
+    font-size: 20px;
+}
+
+table{
+    /* background: lightblue; */
+    border: aqua;
+    margin-top: 2%;
+}
+
+table td{
+    border: 3px solid skyblue;
+}
+
+td{
+    /* padding: 10px;
+    width:300px; */
+}
+
+.fa-search{
+    background: #222930;
+    color: skyblue;
+    padding: 5px;
+    padding-top:10px ;
+    border-radius: 5%;
+    font-size: 26px;
+}
+
+#search{
+    width: 50%;
+}
+.fa-trash{
+    background: #222930;
+    color: skyblue;
+    /* padding: 10px; */
+    border-radius: 5%;
+    font-size: 25px;
+}
+
+#trashbtntd{
+    border: none;
+    /* border-color: aqua; */
+}
+
+.fa-search{
+    background: #222930;
+    color: skyblue;
+    border-radius: 5%;
+    font-size: 20px;
+}
+
+.find{
+    padding-left: 5%; 
+    border: 2px dotted skyblue;
+    margin: 0 30%;
+    text-align: left;   
+}
+
+
+.padd{
+    padding: 10px;
+    width: 400;
+}
+.headstyle{
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+
+.fa-arrow-left{
+    font-size: 5em;
+    color: skyblue;
+    margin-top: 50%;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <script src="/stuff/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./stuff/style.css">
+</head>
+<body>
+
+
+    <% include partial/nav.ejs %>
+   
+    <!-- <div class="form">
+        <form action="/form" method="POST" >
+            <input type="text"  name="name" id="name" placeholder="Enter name" autocomplete="off">
+            <input type="email" name="email" id="email" placeholder="Enter email" autocomplete="off">
+            <input type="text" onkeypress="return event.charCode >=48 && event.charCode <= 57" name="phone" id="phone" placeholder="Enter phone" autocomplete="off">
+            <button> <i class="fas fa-plus-circle"></i> </button>
+        </form>
+
+
+        <form action="/form/find" method="GET">
+           <label for="search"> <input type="text" name="search" id="search" placeholder="Search via name" autocomplete="off">
+            <button type="submit" id="find"><i class="fas fa-search"></i></button></label>
+        </form>
+    </div> -->
+
+<!-- find data -->
+  
+    <h5>
+        <% var flag = false %>
+
+        <% for(var i = 0 ; i < value.length ; i++){ %>
+            <% if(value[i].name == searchquery || value[i].email == searchquery || value[i].phone == searchquery) {  %>
+                <% flag = true %>
+                <% break %>
+            <% } %>
+        <% } %>
+
+        <div class="find">
+        <% if(flag){ %>
+            <h1>:: &nbsp; Record Found &nbsp;   ::</h1>
+            <h3>Name &nbsp;:&nbsp; <%= value[i].name %></h3>
+            <h3>Email&nbsp; :&nbsp; <%= value[i].email %></h3>
+            <h3>Phone&nbsp;:&nbsp; <%= value[i].phone %></h3>
+        <% }else{ %>
+            <h1>:: &nbsp;  Record Not Found  &nbsp;  ::</h1>
+        <% }    %>
+    </div>
+                
+
+                    
+
+       
+    </h5>
+
+    
+
+
+    <!-- show dbs
+    <center>
+    <table border="1px">
+            <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+        </tr>
+                <% for(var i = 0 ; i < value.length ; i++){ %>
+        <tr>
+                <td id="named"><%= value[i].name %> </td>
+                <td id="emaild"> <%= value[i].email  %> </td>
+                <td id="phoned"><%= value[i].phone %></td>
+                <td id="trashbtntd">
+                <form action="/delete/<%= value[i]._id %>">
+                    <button id='del'> <i class="fas fa-trash">
+                    <a href="/delete/<%= value[i]._id %>" ></a>
+                    </i></button></td>
+                </form>
+        </tr>  
+                    
+                <% } %>        
+
+        
+    </table>
+ 
+</center> -->
+
+
+
+<form action="/form">
+    <button><i class="fas fa-arrow-left">&nbsp;Back</i></button>
+</form>
+
+
+
+</body>
+</html>
