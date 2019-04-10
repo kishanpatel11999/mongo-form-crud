@@ -19,34 +19,18 @@
    
     <div class="form">
         <form action="/form" method="POST" id="formid" >
-            <input type="text"  name="name" id="name" onkeyup="Lonly(this)" placeholder="Enter name" autocomplete="off">
+            <input type="text"  name="name" onkeypress="return event.charCode >=97 && event.charCode <=122 || event.charCode >=65 && event.charCode <=90 " id="name" placeholder="Enter name" autocomplete="off">
             <span id="namecheck"></span>
-            <input type="email" name="email" id="email"  placeholder="Enter email" autocomplete="off">
+            <input type="email" name="email" id="email" placeholder="Enter email" autocomplete="off">
             <span id="emailcheck"></span>
             
-            <input type="text" maxlength="10" onkeyup="Nonly(this)"  onkeypress="return event.charCode >=48 && event.charCode <= 57" name="phone" id="phone" placeholder="Enter phone" autocomplete="off">
+            <input type="text" maxlength="10" onkeypress="return event.charCode >=48 && event.charCode <= 57" name="phone" id="phone" placeholder="Enter phone" autocomplete="off">
             <span id="phonecheck"></span>
 
             <button id="validate" > <i class="fas fa-plus-circle"></i> </button>
         </form>
 
-        <script>
-             function Lonly(ip)
-
-                    {
-                        reg=/[^a-z_" "]+[^a-z]/gi;
-                        ip.value=ip.value.replace(reg,"");
-                    }
-
-
-
-            function Nonly(ip)
-
-                    {
-                        reg=/[^0-9]/gi;
-                        ip.value=ip.value.replace(reg,"");
-                    }
-        </script>
+        
 
 
         <br>

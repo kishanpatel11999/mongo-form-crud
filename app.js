@@ -118,7 +118,7 @@ app.get('/about',(req,res)=>{
 
 
 
-const port = 3000;
+const port = process.env.PORT;
 const hostname = '127.0.0.1';
 app.listen(port , hostname ,()=>{
     console.log(`Server started on port: ${port} and host: ${hostname}`);
